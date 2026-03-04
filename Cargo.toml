@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = ["packages/web", "packages/api", "packages/ui"]
+default-members = ["packages/web"]
+
+[workspace.dependencies]
+dioxus = { version = "0.7.1" }
+bon = { version = "3.9.0" }
+rootcause = { version = "0.12.1" }
+tap = { version = "1.0.1" }
+
+# workspace
+ui = { path = "packages/ui" }
+api = { path = "packages/api" }
+web = { path = "packages/web" }
