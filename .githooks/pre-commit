@@ -17,6 +17,13 @@ run_sqlx_prepare() {
   cargo sqlx prepare "$@" --workspace -- "${SQLX_CARGO_ARGS[@]}"
 }
 
+run_workspace_check() {
+  cargo check --workspace --all-targets --all-features
+}
+
+echo "Running: cargo check --workspace --all-targets --all-features"
+run_workspace_check
+
 echo "Running: cargo sqlx prepare --check --workspace -- ${SQLX_CARGO_ARGS[*]}"
 if run_sqlx_prepare --check; then
   exit 0
@@ -35,3 +42,6 @@ fi
 
 echo "Re-checking SQLx metadata after regeneration..."
 run_sqlx_prepare --check
+
+echo "Re-running workspace check after SQLx regeneration..."
+run_workspace_check
