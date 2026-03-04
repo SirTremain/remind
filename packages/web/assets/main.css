@@ -1,6 +1,36 @@
 body {
     background-color: #0f1116;
     color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
+}
+
+.home-profile {
+    max-width: 540px;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background: #161b22;
+    padding: 22px;
+}
+
+.home-profile h1 {
+    margin: 0 0 10px;
+    font-size: 1.6rem;
+}
+
+.home-profile-label {
+    margin: 0;
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.home-profile-value {
+    margin: 4px 0 2px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.home-profile-subtle {
+    margin: 2px 0;
+    color: #8b949e;
 }

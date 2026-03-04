@@ -1,16 +1,136 @@
 #navbar {
-  display: flex;
-  flex-direction: row;
+    width: calc(100% + 40px);
+    margin: -20px -20px 24px;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    background: #0d1117;
+    border-bottom: 1px solid #30363d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #navbar a {
-  color: #ffffff;
-  margin-right: 20px;
-  text-decoration: none;
-  transition: color 0.2s ease;
+    color: #f0f6fc;
+    text-decoration: none;
 }
 
-#navbar a:hover {
-  cursor: pointer;
-  color: #91a4d2;
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-link {
+    color: #c9d1d9;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: #f0f6fc;
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.sign-in-btn {
+    border: 0;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: #f0f6fc;
+    font-weight: 600;
+}
+
+.sign-in-btn:hover {
+    background: #161b22;
+}
+
+.sign-up-btn {
+    border: 1px solid #f0f6fc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #f0f6fc;
+    font-weight: 600;
+}
+
+.sign-up-btn:hover {
+    background: #f0f6fc;
+    color: #0d1117;
+}
+
+.profile-shell {
+    position: relative;
+}
+
+.profile-icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid #8b949e;
+    background: #161b22;
+    color: #f0f6fc;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile-icon-btn:hover {
+    background: #1f2733;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 220px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 20;
+}
+
+.profile-name {
+    margin: 0;
+    color: #f0f6fc;
+    font-weight: 600;
+}
+
+.profile-email {
+    margin: 0;
+    color: #8b949e;
+    font-size: 0.86rem;
+}
+
+.profile-logout-btn {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background: #0d1117;
+    color: #f0f6fc;
+    padding: 8px 10px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.profile-logout-btn:hover {
+    background: #1c2128;
+}
+
+.profile-logout-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+    #navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
 }

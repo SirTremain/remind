@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+if ! cargo sqlx --help >/dev/null 2>&1; then
+  echo "error: sqlx-cli is required for this hook. Install it with: cargo install sqlx-cli" >&2
+  exit 1
+fi
+
+SQLX_CARGO_ARGS=(-p api --all-features --all-targets)
+
+run_sqlx_prepare() {
+  # Force a fresh compile so SQLx can reliably discover all query macros.
+  cargo clean -p api >/dev/null
+  cargo sqlx prepare "$@" --workspace -- "${SQLX_CARGO_ARGS[@]}"
+}
+
+echo "Running: cargo sqlx prepare --check --workspace -- ${SQLX_CARGO_ARGS[*]}"
+if run_sqlx_prepare --check; then
+  exit 0
+fi
+
+echo "SQLx metadata is out of date. Regenerating..."
+run_sqlx_prepare
+
+if [ -d .sqlx ]; then
+  git add -A .sqlx
+  echo "Staged updated .sqlx metadata"
+else
+  echo "error: expected .sqlx directory after prepare, but it was not found" >&2
+  exit 1
+fi
+
+echo "Re-checking SQLx metadata after regeneration..."
+run_sqlx_prepare --check

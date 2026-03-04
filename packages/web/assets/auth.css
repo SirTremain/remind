@@ -1,0 +1,126 @@
+.auth-page {
+    display: flex;
+    justify-content: center;
+    padding: 24px 16px 40px;
+}
+
+.auth-card {
+    width: min(440px, 100%);
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 22px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-card h1 {
+    margin: 0 0 4px;
+    font-size: 1.45rem;
+    color: #f0f6fc;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background: #0d1117;
+    color: #f0f6fc;
+    padding: 10px 12px;
+}
+
+.auth-input:focus {
+    outline: 2px solid #1f6feb;
+    outline-offset: 0;
+}
+
+.auth-submit {
+    border: 1px solid #238636;
+    border-radius: 6px;
+    background: #238636;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.auth-submit:hover {
+    background: #2ea043;
+    border-color: #2ea043;
+}
+
+.auth-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin: 2px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid #30363d;
+}
+
+.auth-divider span {
+    padding: 0 10px;
+    text-transform: lowercase;
+}
+
+.social-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-btn {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 9px 12px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.social-btn:hover {
+    background: #1c2128;
+}
+
+.auth-footer {
+    margin: 4px 0 0;
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.92rem;
+}
+
+.auth-footer a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.auth-error {
+    margin: 0;
+    color: #ff9ca7;
+    font-size: 0.9rem;
+}

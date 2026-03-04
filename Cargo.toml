@@ -13,3 +13,6 @@ tap = { version = "1.0.1" }
 ui = { path = "packages/ui" }
 api = { path = "packages/api" }
 web = { path = "packages/web" }
+
+[profile.dev.package.sqlx-macros]
+opt-level = 3

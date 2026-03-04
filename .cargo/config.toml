@@ -1,0 +1,5 @@
+[env]
+# SQLx query macros use DATABASE_URL at compile time for query validation.
+DATABASE_URL = { value = "sqlite://remind.sqlite3", force = false }
+# Runtime default for the app server; can still be overridden by shell env.
+REMIND_DATABASE_URL = { value = "sqlite://remind.sqlite3", force = false }
